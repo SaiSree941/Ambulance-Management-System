@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Booked Ambulance/s</title>
+  <style>
+    body ,html{
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: center;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      text-align: center;
+      background-color: #fce4ec;
+    }
+
+
+    h1, h2 {
+      color: #e91e63;
+    }
+
+
+    ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+
+    li {
+      margin-bottom: 5px;
+    }
+
+
+    .button-container {
+      text-align: center;
+       /* Pushes the button container to the bottom */
+      margin-bottom: 20px;
+      width: 100%;
+      /*background-color: #fce4ec;*/
+    }
+    .button-container button{
+        padding: 10px 20px;
+        font-size: 18px;
+        background-color: #e91e63;
+        color:white ;
+    }
+    .content-container {
+      position: relative;
+      width: 100%;
+      min-height: 1px;
+      padding-right: 15px;
+      padding-left: 15px;
+      /*background-color: #fce4ec;*/
+    }
+
+
+    .instructions-container {
+        position: absolute;
+        /*background-color: #fce4ec; */
+      width: 100%;
+      min-height: 1px;
+      right: 0;
+      top: 0;
+      width: 40%;
+    }
+
+
+    @media (min-width: 576px) {
+      .content-container {
+        flex: 0 0 50%;
+        max-width: 50%;
+      }
+
+
+      .button-container {
+        flex: 0 0 50%;
+        max-width: 50%;
+      }
+    }
+
+
+    @media (min-width: 768px) {
+      .instructions-container {
+        width: 40%;
+        margin-top: 30px !important;
+        margin-right: auto;
+        margin-left: auto;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>Booked Ambulance/s</h1>
+
+
+  <div class="content-container">
+    <h2>Ambulance Contact Numbers:</h2>
+    <ul>
+      <li>Emergency: 911</li>
+      <li>Local Ambulance Service: 555-1234</li>
+      <li>Regional Ambulance HQ: 555-5678</li>
+    </ul>
+
+
+    <h2>Estimated Time of Arrival:</h2>
+    <p id="arrivalTime">--:--</p>
+  </div>
+
+
+  <div class="button-container">
+    <button onclick="trackAmbulance()">Track Ambulance</button>
+    <button  onclick="makePayment()" >Generate Bill</button>
+    <button onclick="cancelAmbulance()">Cancel Ambulance</button>
+  </div>
+
+  <div class="instructions-container">
+    <h2>Instructions for Companion:</h2>
+    <p >
+ <br>   Dear Companion,
+    </br><br>
+      Here are some instructions to assist the patient while awaiting the arrival of the ambulance:
+    </br>
+    <br>  <strong>1. Assess the Situation</strong> 
+    </br>
+    <br> <strong>2. Clear the Area</strong> 
+</br>
+    <br>  <strong>3. Gather Information</strong> 
+</br>
+    <br> <strong>4. Communicate</strong> 
+</br>
+    <br>  <strong>5. Follow Emergency Instructions</strong> 
+</br>
+    <br>  <strong>6. Await Ambulance</strong> 
+</br>
+ <br>     Your assistance is crucial in ensuring the patient's well-being.</br>
+ <br> Thank you for your cooperation.</br>
+ 
+    </p>
+  </div>
+
+
+  <script>
+    function trackAmbulance() {
+      // Functionality to track ambulance goes here
+      alert("Tracking ambulance...");
+    }
+
+
+    function makePayment() {
+      // Functionality to make payment goes here
+      alert("Redirecting to payment page...");
+    }
+      
+
+    function cancelAmbulance() {
+      // Functionality to cancel ambulance request goes here
+      alert("Canceling ambulance request...");
+    }
+  </script>
+</body>
+</html>

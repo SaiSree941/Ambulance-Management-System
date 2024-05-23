@@ -1,0 +1,52 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Accident Report Form</title>
+  <link rel="stylesheet" href="applicationStyles.css">
+</head>
+<body style="background-color:darkpink;">
+
+
+  <div style="background-color:pink;", class="container">
+    <h1>Fill the form to book Ambulance</h1>
+    <form action="/demo/src/main/java/com/example/demo/service/FormServlet.java/patient_form" method="POST">
+      <div class="form-group">
+        <label for="companion">Companion's Name:</label>
+        <input type="text" id="companion" name="companion" required>
+      </div>
+      <div class="form-group">
+        <label for="contact">Contact:</label>
+        <input type="tel" id="contact" name="contact" required>
+      </div>
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email">
+      </div>
+      <div class="form-group">
+        <label for="location">Location:</label>
+        <input type="radio" id="currentLocation" name="locationType" value="currentLocation" checked>
+        <label for="currentLocation">Current Location</label><br>
+        <input type="radio" id="inputText" name="locationType" value="inputText">
+        <label for="inputText">Enter Address</label><br>
+        <div id="textInputContainer">
+            <label for="textInput">Enter Location:</label>
+            <input type="text" id="textInput" name="textInput">
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="accident-type">Type of Accident:</label>
+        <input type="text" id="accident-type" name="accident-type" required>
+      </div>
+      <div class="form-group">
+        <label for="patients">Number of Patients:</label>
+        <input type="number" id="patients" name="patients" required>
+      </div>
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+</body>
+</html>

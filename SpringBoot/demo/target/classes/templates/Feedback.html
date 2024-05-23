@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback Page</title>
+    <style>
+        /* CSS styles */
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #e91e63;
+        }
+
+        .feedback-form {
+            margin-bottom: 40px;
+        }
+
+        .feedback-form h2 {
+            margin-bottom: 20px;
+        }
+
+        .feedback-form label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .feedback-form input,
+        .feedback-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        .feedback-form button {
+            width: 100%;
+            padding: 10px;
+            background-color: #e91e63;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .feedback-form button:hover {
+            background-color: #c2185b;
+        }
+
+        .feedback-list {
+            border-top: 1px solid #ccc;
+            padding-top: 20px;
+        }
+
+        .feedback-list h2 {
+            margin-bottom: 20px;
+        }
+
+        .feedback-item {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Feedback Page</h1>
+
+        <!-- Feedback Form -->
+        <div class="feedback-form">
+            <h2>Give Feedback</h2>
+            <form id="feedbackForm">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" required></textarea>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+
+        <!-- Feedback List -->
+        <div class="feedback-list" id="feedbackList">
+            <h2>Recent Feedbacks</h2>
+            <ul id="feedbackItems">
+                <!-- Feedback items will be inserted here dynamically using JavaScript -->
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        // JavaScript code
+        // Sample feedback data
+        const feedbackData = [
+            { name: "John", message: "Great service! Highly recommended." },
+            { name: "Alice", message: "Fast response time and professional staff." },
+            { name: "Bob", message: "Excellent experience. Thank you!" }
+        ];
+
+        // Function to display feedback items
+        function displayFeedbacks() {
+            const feedbackList = document.getElementById("feedbackItems");
+            feedbackList.innerHTML = ''; // Clear existing items
+
+            feedbackData.forEach(item => {
+                const li = document.createElement("li");
+                li.className = "feedback-item";
+                li.textContent = `${item.name}: ${item.message}`;
+                feedbackList.appendChild(li);
+            });
+        }
+
+        // Function to handle form submission
+        function submitFeedback(event) {
+            event.preventDefault(); // Prevent form submission
+
+            const name = document.getElementById("name").value;
+            const message = document.getElementById("message").value;
+
+            // Add the new feedback to the data array
+            feedbackData.push({ name, message });
+
+            // Update the displayed feedbacks
+            displayFeedbacks();
+
+            // Clear the form fields
+            document.getElementById("name").value = '';
+            document.getElementById("message").value = '';
+        }
+
+        // Display initial feedbacks
+        displayFeedbacks();
+
+        // Add event listener for form submission
+        document.getElementById("feedbackForm").addEventListener("submit", submitFeedback);
+    </script>
+</body>
+</html>
